@@ -1,0 +1,13 @@
+{
+  "authorship": "Original examples written for the AnkiCode publication candidate; not sourced from LeetCode, NeetCode, Grind 75 or a downloaded dataset.",
+  "meter": {
+    "slug": "ankicode-demo-meter-deltas",
+    "title": "Total meter deltas",
+    "description": "<p>A workshop records signed changes in a meter reading. Implement <code>totalDelta(deltas)</code> to return the combined change. An empty record has a combined change of zero.</p><p>For the original demonstration record <code>[4, -9, 12]</code>, the combined change is <code>7</code>.</p>",
+    "pythonStarter": "class Solution:\n    def totalDelta(self, deltas):\n        pass\n",
+    "pythonSolution": "class Solution:\n    def totalDelta(self, deltas):\n        return sum(deltas)\n",
+    "javascriptStarter": "var totalDelta = function(deltas) {\n    // Return the combined meter change.\n};\n",
+    "javascriptSolution": "var totalDelta = function(deltas) {\n    return deltas.reduce((total, delta) => total + delta, 0);\n};\n",
+    "assertions": "def check(candidate):\n    assert candidate(deltas=[4, -9, 12]) == 7\n    assert candidate(deltas=[]) == 0\n    assert candidate(deltas=[-8, -3]) == -11\n    assert candidate(deltas=[5, -5, 5]) == 5\n"
+  }
+}
