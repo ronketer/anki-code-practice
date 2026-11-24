@@ -1,5 +1,7 @@
 # AnkiCode
 
+[![CI](https://github.com/ronketer/anki-code-practice/actions/workflows/ci.yml/badge.svg)](https://github.com/ronketer/anki-code-practice/actions/workflows/ci.yml)
+
 AnkiCode turns Anki flashcards into coding exercises. Each card has a real code
 editor (CodeMirror 6) and **Run** and **Tests** buttons that execute your solution
 inside the card: Python through Pyodide, JavaScript natively, both in a sandboxed
@@ -42,6 +44,10 @@ built from problem statements and datasets that can't be redistributed, so they
 are not included. No LeetCode or NeetCode problem content is in this repository.
 
 ## Quick start
+
+To just try it, download `AnkiCode-Demo.apkg` from the
+[latest release](https://github.com/ronketer/anki-code-practice/releases/latest)
+and import it into Anki with **File > Import**. To build it yourself:
 
 Requirements: Python 3.13+ and [uv](https://docs.astral.sh/uv/). Building a
 deck doesn't need Node.js, because the editor bundles are committed.
@@ -122,6 +128,9 @@ with fixed model, deck and note IDs, and ships the license notices inside the
 deck as media files.
 
 ## Running the tests
+
+CI runs the unit tests, the demo build and verification, the publication audit
+and a check that the committed bundles match their source on every push.
 
 Unit tests (Python and Node):
 

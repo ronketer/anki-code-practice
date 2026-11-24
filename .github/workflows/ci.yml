@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    name: Tests and audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+      - name: Install Python dependencies
+        run: uv sync --locked
+      - name: Python unit tests
+        run: uv run python -m unittest discover -s tests -v
+      - name: Node unit tests
+        run: node --test tests/
+      - name: Build and verify the demo deck
+        run: |
+          uv run python build_demo.py
+          uv run python tools/verify_demo.py
+      - name: Publication audit
+        run: uv run python tools/audit_publication.py
+
+  bundles:
+    name: Bundles match source
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 26
+      - name: Rebuild editor bundles from the lockfile
+        run: |
+          npm ci --prefix card-template/editor --ignore-scripts
+          npm run build --prefix card-template/editor
+          npm run build --prefix card-template/javascript
+      - name: Fail if the committed bundles differ
+        run: git diff --exit-code -- card-template
