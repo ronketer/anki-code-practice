@@ -36,7 +36,7 @@ for index, language in enumerate(('python', 'javascript'), 1):
     assert values['Solution'] == '<pre><code>' + html.escape(meter[language + 'Solution']) + '</code></pre>'
     assert values['Notes'] == values['Prompt'] == ''
     assert values['Id'] == '1' and values['Difficulty'] == 'Demo'
-    assert values['TopicTags'] == json.dumps({'demo': 'Original demo'})
+    assert values['TopicTags'] == json.dumps({'array': 'Array', 'math': 'Math'})
     assert values['Hints'] == '<p>Four original test cases. Run your own examples or choose Tests.</p>'
     assert html.unescape(values['EntryPoint']) == ('Solution().totalDelta' if language == 'python' else 'totalDelta')
     assert 'leetcode.com/problems/' not in json.dumps(model)
@@ -47,7 +47,7 @@ with zipfile.ZipFile(package) as archive:
     db.close()
     for card in cards:
         assert all(card[key] == 0 for key in ('type', 'queue', 'ivl', 'reps', 'lapses', 'odue', 'odid'))
-    required = {'_ankicode-license-scope.txt', '_ankicode-original-examples-MIT.txt',
+    required = {'_ankicode-LICENSE-GPL-3.0.txt', '_ankicode-original-examples-MIT.txt',
                 '_ankicode-third-party-notices.md', '_codemirror6.js', '_pro-runtime.js',
                 '_highlight.min.js', '_python.min.js', '_atom-one-dark.min.css', '_katex.css',
                 '_cm6-LICENSES.txt', '_javascript-editor.js', '_javascript-runtime.js',

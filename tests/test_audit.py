@@ -50,7 +50,7 @@ class AuditTests(unittest.TestCase):
             self.assertIn(name, failures, name)
 
     def test_clean_files_pass_and_ignored_build_is_skipped(self):
-        code, failures = self.run_audit({'README.md': '# Title\n[ok](a.py)\n', 'a.py': 'import json\n',
+        code, failures = self.run_audit({'README.md': '# Title\n[ok](a.py)\n<!-- ![later](docs/demo.gif) -->\n', 'a.py': 'import json\n',
                                          'build/out.apkg': 'generated'})
         self.assertEqual((code, failures), (0, {}))
 

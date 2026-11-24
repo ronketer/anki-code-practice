@@ -65,7 +65,7 @@ def note_values(exercise, language):
         'Id': '1',
         'Title': exercise['title'],
         'TitleSlug': exercise['slug'],
-        'TopicTags': json.dumps({'demo': 'Original demo'}),
+        'TopicTags': json.dumps({'array': 'Array', 'math': 'Math'}),
         'Difficulty': 'Demo',
         'Description': exercise['description'],
         'Notes': '',
@@ -110,7 +110,7 @@ def main():
     # License texts travel inside the deck as well as with the source.
     for path in (ROOT / 'LICENSES').glob('*.txt'):
         media['_ankicode-notice-' + path.name] = path
-    media['_ankicode-license-scope.txt'] = ROOT / 'LICENSE'
+    media['_ankicode-LICENSE-GPL-3.0.txt'] = ROOT / 'LICENSE'
     media['_ankicode-original-examples-MIT.txt'] = ROOT / 'examples/LICENSE'
     media['_ankicode-third-party-notices.md'] = ROOT / 'THIRD_PARTY_NOTICES.md'
     for name, source in media.items():

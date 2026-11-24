@@ -122,7 +122,8 @@ def check_file(relative, failures):
                         and not local_module_exists(module)):
                     fail('unresolved import: ' + module)
     if path.suffix == '.md':
-        for target in re.findall(r'\]\(([^)#\s]+)', content):
+        rendered = re.sub(r'<!--.*?-->', '', content, flags=re.S)  # comments aren't shown on GitHub
+        for target in re.findall(r'\]\(([^)#\s]+)', rendered):
             if not re.match(r'[a-z]+:', target) and not (path.parent / target).exists():
                 fail('broken link: ' + target)
 
