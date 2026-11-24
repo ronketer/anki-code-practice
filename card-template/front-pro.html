@@ -1,0 +1,52 @@
+<main id="neet-pro">
+<!-- Fields reach the runtime as textarea text, never through JavaScript string
+     interpolation. The builder HTML-escapes them so they cannot close the
+     textarea; tools/verify_demo.py checks this. -->
+<div hidden aria-hidden="true">
+<textarea id="field-code-snippets">{{CodeSnippets}}</textarea>
+<textarea id="field-test-code">{{TestCode}}</textarea>
+<textarea id="field-prompt">{{Prompt}}</textarea>
+<textarea id="field-entry-point">{{EntryPoint}}</textarea>
+<textarea id="field-topic-tags">{{TopicTags}}</textarea>
+<textarea id="field-title-slug">{{TitleSlug}}</textarea>
+</div>
+<header class="pro-heading"><a href="https://leetcode.com/problems/{{TitleSlug}}/">{{Id}}. {{Title}}</a></header>
+<div class="pro-tags"><button type="button" id="show-tags">Tags</button><span id="tags"></span></div>
+<section class="problem-description">{{Description}}</section>
+<section class="pro-editor" aria-label="Python editor">
+  <div class="pro-toolbar">
+    <strong>Python</strong><span id="python-status" role="status">Python idle</span>
+    <div class="pro-actions">
+      <button type="button" id="run-button" title="Run (Ctrl/Cmd+Enter)" disabled>Run</button>
+      <button type="button" id="test-button" title="Tests (Ctrl/Cmd+Shift+Enter)" disabled>Tests</button>
+      <button type="button" id="stop-button" disabled>Stop</button>
+      <button type="button" id="reset-button" title="Restore starter code" disabled>Reset</button>
+    </div>
+  </div>
+  <div id="code-window"></div>
+  <details id="output-panel"><summary>Output</summary><pre id="output-window" aria-live="polite"></pre></details>
+</section>
+<section class="pro-hints">{{Hints}}</section>
+</main>
+<script>
+(function () {
+  var root = document.currentScript.previousElementSibling;
+  if (window.AnkiCodeCard) window.AnkiCodeCard.destroy();
+  if (!root.closest('[data-ankicode-side="answer"]')) window.__neetProQuestion = root;
+  else root.__ankiCodeQuestionRoot = window.__neetProQuestion;
+  function mount() { if (root.isConnected) window.NeetCodePro.mount(root); }
+  if (window.NeetCodePro) { mount(); return; }
+  if (!window.__neetProLoading) window.__neetProLoading = new Promise(function (resolve, reject) {
+    var script = document.createElement("script");
+    script.src = "_pro-runtime.js";
+    script.onload = resolve;
+    script.onerror = function () { window.__neetProLoading = null; script.remove(); reject(new Error("Could not load editor runtime.")); };
+    document.head.appendChild(script);
+  });
+  window.__neetProLoading.then(mount).catch(function (error) {
+    if (!root.isConnected) return;
+    root.querySelector("#output-panel").open = true;
+    root.querySelector("#output-window").textContent = error.message;
+  });
+})();
+</script>
