@@ -1,0 +1,17 @@
+# Normalize text files to LF in the repository.
+* text=auto eol=lf
+*.apkg binary
+*.png binary
+*.gif binary
+
+# Built bundles and third-party assets. GitHub collapses them in diffs and
+# leaves them out of the language statistics.
+card-template/js/_codemirror6.js linguist-generated=true
+card-template/js/_pro-runtime.js linguist-generated=true
+card-template/js/_javascript-editor.js linguist-generated=true
+card-template/js/_javascript-runtime.js linguist-generated=true
+card-template/javascript/_javascript-LICENSES.txt linguist-generated=true
+card-template/js/_highlight.min.js linguist-vendored=true
+card-template/js/_python.min.js linguist-vendored=true
+card-template/css/_*.css linguist-vendored=true
+card-template/javascript/_javascript-*.css linguist-vendored=true

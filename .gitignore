@@ -1,0 +1,43 @@
+# Build output and caches
+/build/
+node_modules/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+
+# Anki packages and collections: build them, don't commit them
+*.apkg
+*.colpkg
+*.anki2
+*.anki2-*
+
+# Private material lives outside this repo. These rules are a safeguard.
+/_private/
+/data/
+/neetcode-150-list.json
+/grind169-difficulty.*
+
+# Tool and editor state
+.playwright-mcp/
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Secrets
+.env
+.env.*
+.npmrc
+.pypirc
+*.pem
+*.key
+credentials.json
+cookie.dat

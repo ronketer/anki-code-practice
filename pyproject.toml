@@ -1,0 +1,20 @@
+[project]
+name = "ankicode"
+version = "0.1.0"
+description = "Interactive Python and JavaScript coding practice cards for Anki, with a CodeMirror 6 editor and in-card test runners"
+readme = "README.md"
+license = "GPL-3.0-only"
+license-files = ["LICENSE", "LICENSES/*.txt", "examples/LICENSE"]
+authors = [{ name = "ronketer" }]
+keywords = ["anki", "flashcards", "codemirror", "pyodide", "coding-practice", "spaced-repetition"]
+requires-python = ">=3.13"
+dependencies = [
+    "genanki>=0.13.1",
+]
+
+[project.urls]
+Repository = "https://github.com/ronketer/anki-code-practice"
+Upstream = "https://github.com/krmanik/Anki-NeetCode"
+
+[tool.uv]
+package = false
