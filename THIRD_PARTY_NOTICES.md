@@ -34,7 +34,7 @@ The JavaScript card ships copies of the CSS files and the editor notices under
 
 ## AnkiCode itself
 
-AnkiCode is licensed under [GPL-3.0](LICENSE). The original demo exercise in
+AnkiCode is Copyright (C) 2026 ronketer and licensed under [GPL-3.0](LICENSE). The original demo exercise in
 `examples/cards.json` is also available under the [MIT license](examples/LICENSE).
 The built demo deck carries these notices as media files. AnkiCode contains no
 LeetCode or NeetCode problem statements and is not affiliated with them.

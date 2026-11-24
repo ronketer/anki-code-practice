@@ -8,8 +8,12 @@ it with the reference solution and then grade yourself as usual. It is a
 modernization of [krmanik/Anki-NeetCode](https://github.com/krmanik/Anki-NeetCode)
 with a new editor, runtime and test generator.
 
-<!-- Screenshot placeholder: replace with a GIF of a card being solved in Anki. -->
-*Screenshot coming soon.*
+<!-- Demo GIF placeholder. Record a card being solved in Anki (type, Run, Tests,
+     Show Answer), save it as docs/demo.gif (under 2 MB), then replace the
+     italic line below with:
+![Solving a Python card in Anki: Run, Tests and Show Answer](docs/demo.gif)
+-->
+*Demo GIF coming soon.*
 
 ## Features
 
@@ -192,6 +196,6 @@ AnkiCode is not affiliated with Anki, LeetCode or NeetCode.
 
 ## License
 
-[GPL-3.0](LICENSE). The demo exercise in `examples/` is
+Copyright (C) 2026 ronketer. Licensed under [GPL-3.0](LICENSE). The demo exercise in `examples/` is
 [MIT](examples/LICENSE). Bundled third-party components keep their own licenses,
 listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
