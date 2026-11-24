@@ -10,12 +10,7 @@ it with the reference solution and then grade yourself as usual. It is a
 modernization of [krmanik/Anki-NeetCode](https://github.com/krmanik/Anki-NeetCode)
 with a new editor, runtime and test generator.
 
-<!-- Demo GIF placeholder. Record a card being solved in Anki (type, Run, Tests,
-     Show Answer), save it as docs/demo.gif (under 2 MB), then replace the
-     italic line below with:
 ![Solving a Python card in Anki: Run, Tests and Show Answer](docs/demo.gif)
--->
-*Demo GIF coming soon.*
 
 ## Features
 
